@@ -1,0 +1,10 @@
+To fix the issue, explicitly set the width of the parent container. For example, if the element with `width: calc(100% - 20px);` is inside a `div`, set the width of the `div`.  
+```css
+div {
+  width: 500px; /* Or any other fixed or percentage width */
+}
+div > element {
+  width: calc(100% - 20px);
+}
+```
+This ensures that `calc()` has a definite value to work with, preventing unexpected behavior.
